@@ -9,7 +9,7 @@ const Wish = () => {
     // console.log(storedData)
     return (
         <div>
-            <ListedBook />
+            <ListedBook storedData={storedData} />
             {
                 storedData?.map((book) => (
                     <Card key={book?.bookId} book={book}></Card>

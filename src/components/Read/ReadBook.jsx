@@ -4,10 +4,10 @@ import Card from '../Card/Card';
 const ReadBook = () => {
     const storedDataString = localStorage.getItem("read");
     let storedData = JSON.parse(storedDataString) || [];
-    console.log(storedData)
+    // console.log(storedData)
     return (
         <div>
-            <ListedBook />
+            <ListedBook storedData={storedData} />
             {
                 storedData?.map((book) => (
                     <Card key={book?.bookId} book={book}></Card>

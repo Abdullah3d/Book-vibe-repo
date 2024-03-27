@@ -28,8 +28,8 @@ const Card = ({book}) => {
                             {total}</p>
                     </div>
                     <div className="card-actions  rounded-2xl">
-                        <button className="btn text-xl text-blue-300 ">category:Classic</button>
-                        <button className="btn text-xl text-yellow-500   ">Rating: 4.5</button>
+                        <button className="btn text-xl text-blue-300 ">category:{cat}</button>
+                        <button className="btn text-xl text-yellow-500   ">Rating: {rat}</button>
                         <button className="btn text-xl bg-green-600 ">View details</button>
                     </div>
                 </div>
