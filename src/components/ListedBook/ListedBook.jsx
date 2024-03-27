@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 const ListedBook = () => {
     
     return (
-        <div>
+        <div className=" grid justify-center">
             <h1 className="text-center text-4xl font-extrabold">Books</h1>
-            <select className="select select-accent text-center w-full max-w-xs">
-                <option className="text-center">Sort by</option>
+            <select  className=" select select-accent text-center w-full max-w-xs bg-green-400">
+                <option disabled selected>Sort by</option>
                 <option>Rating</option>
                 <option>NUmber of pages</option>
                 <option>Publish year</option>
