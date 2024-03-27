@@ -1,16 +1,25 @@
 import "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const ListedBook = ({ storedData }) => {
-    // const [short, setShort] = useState([]);
+    const [short, setShort] = useState([]);
 
-    // console.log(short,"sorted",storedData)
+    console.log(short)
 
-    // Event handler function to update the selected value
+    useEffect(() => {
+
+        const sorted = [...storedData].sort((a, b) => b.rat - a.rat);
+        
+        setShort(sorted);
+    }, []);
+
     const handleCollegeChange = (event) => {
         const selectedCollege = event.target.value;
         console.log(selectedCollege)
+        const sorted = [...storedData].sort((a, b) => b.rating - a.rating);
+        
+        console.log(sorted);
     };
 
 
