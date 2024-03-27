@@ -25,7 +25,7 @@ const ShowCard = () => {
         const storedDataString = localStorage.getItem("read");
         const storedData = JSON.parse(storedDataString) || [];
         const isIdExist = storedData.some(cocktail => cocktail.id === book.bookId);
-        
+
         if (!isIdExist) {
             storedData.push({
                 id: book.bookId,
@@ -49,10 +49,11 @@ const ShowCard = () => {
     const wishItem = (book) => {
         const storedData = JSON.parse(localStorage.getItem("wish")) || [];
         const read = JSON.parse(localStorage.getItem("read")) || [];
-        const isIdInWish = read.some(cocktail => storedData.some(wishCocktail => wishCocktail.id === cocktail.id));
+        console.log(read)
         const isIdExist = storedData.some(cocktail => cocktail.id === book.bookId);
-        
-        if (!isIdExist && isIdInWish) {
+        const isIdInWish = read.some(cocktail => cocktail.id === book.bookId);
+        console.log("isex",isIdExist, "iswish" ,isIdInWish)
+        if (!isIdExist && !isIdInWish) {
             storedData.push({
                 id: book.bookId,
                 name: book.bookName,
@@ -67,7 +68,8 @@ const ShowCard = () => {
             });
             toast.success("Added to wish list successfully");
             localStorage.setItem("wish", JSON.stringify(storedData));
-        } else {
+        }      
+        else {
             toast.error("Already added ");
         }
     };

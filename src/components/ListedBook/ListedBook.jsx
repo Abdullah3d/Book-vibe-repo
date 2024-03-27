@@ -1,25 +1,30 @@
 import "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const ListedBook = ({ storedData }) => {
-    const [short, setShort] = useState([]);
+const ListedBook = ({ storedData , setShort}) => {
 
-    console.log(short)
 
-    useEffect(() => {
-
-        const sorted = [...storedData].sort((a, b) => b.rat - a.rat);
-        
-        setShort(sorted);
-    }, []);
-
+    // Event handler function to update the selected value
     const handleCollegeChange = (event) => {
         const selectedCollege = event.target.value;
         console.log(selectedCollege)
-        const sorted = [...storedData].sort((a, b) => b.rating - a.rating);
-        
-        console.log(sorted);
+
+        if (selectedCollege === 'rating') {
+            const sorted = [...storedData].sort((a, b) => b.rat - a.rat);
+
+            setShort(sorted);
+        }
+        else if (selectedCollege === 'page') {
+            const sorted = [...storedData].sort((a, b) => b.total - a.total);
+
+            setShort(sorted);
+        }
+        else if (selectedCollege === 'year') {
+            const sorted = [...storedData].sort((a, b) => b.year - a.year);
+
+            setShort(sorted);
+        }
     };
 
 
@@ -34,7 +39,7 @@ const ListedBook = ({ storedData }) => {
                 <option value="rating">Rating</option>
                 <option value="page">Page number</option>
                 <option value="year">Publish year</option>
-               
+
             </select>
             <ul className="flex gap-5 text-2xl font-bold p-5">
                 <li><NavLink to="/listed">Read books</NavLink></li>
