@@ -1,6 +1,6 @@
-import { data } from "autoprefixer";
 import { useEffect, useState } from "react";
 import Book from "../Book/Book";
+
 
 const ShowBook = () => {
     const [books ,setBooks] = useState([]);
@@ -17,7 +17,7 @@ const ShowBook = () => {
             </div>
             <div className="grid grid-cols-3 gap-5 p-7">
                 {
-                    books.map(book => <Book key={books.id} book={book}></Book>)
+                    books.map(book => <Book key={books.bookId} book={book}></Book>)
                 }
             </div>
         </div>

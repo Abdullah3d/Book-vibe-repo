@@ -8,6 +8,10 @@ import {
 import Root from './components/Root/Root';
 import Home from './components/Home/Home';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import PageToRead from './components/PageToReas/PageToRead';
+import ShowCard from './components/ShowCard/ShowCard';
+import ReadBook from './components/Read/ReadBook';
+import Wish from './components/Wish/Wish';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,7 +21,25 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path:"/listed",
+        element: <ReadBook></ReadBook>
+      },
+      {
+        path:"/listed/wishlist",
+        element: <Wish></Wish>
+      },
+      {
+        path:"/pages",
+        element: <PageToRead></PageToRead>
+      },
+      {
+        path:"/books/:id",
+        element: <ShowCard></ShowCard>,
+        loader: ()=> fetch('books.json')
       }
+      
     ]
   },
 ]);
