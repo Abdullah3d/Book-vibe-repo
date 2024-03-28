@@ -1,5 +1,5 @@
 import { Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis } from "recharts";
-
+import './pageToReas.css'
   
 const PageToRead = () => {
     const storedDataString = localStorage.getItem("read");

@@ -1,4 +1,3 @@
-import { MdSettingsInputHdmi } from "react-icons/md";
 
 const Form = () => {
     const handleSubmit = e => {
