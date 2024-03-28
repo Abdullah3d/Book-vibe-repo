@@ -12,6 +12,8 @@ import PageToRead from './components/PageToReas/PageToRead';
 import ShowCard from './components/ShowCard/ShowCard';
 import ReadBook from './components/Read/ReadBook';
 import Wish from './components/Wish/Wish';
+import Form from './components/Form/Form';
+import Contact from './components/Contact/Contact';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
       {
         path:"/listed/wishlist",
         element: <Wish></Wish>
+      },
+      {
+        path:"/form",
+        element: <Form></Form>
+      },
+      {
+        path:"/contact",
+        element: <Contact></Contact>
       },
       {
         path:"/pages",

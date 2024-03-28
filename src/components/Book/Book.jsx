@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const Book = ({ book }) => {
   // eslint-disable-next-line react/prop-types
   const { bookName, author, rating, image, category, tags, totalPages, bookId } = book;
-  
+
 
   return (
     <>
