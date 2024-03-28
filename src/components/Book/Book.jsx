@@ -1,6 +1,7 @@
 import { IoIosStarOutline } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
+
 // eslint-disable-next-line react/prop-types
 const Book = ({ book }) => {
   // eslint-disable-next-line react/prop-types
