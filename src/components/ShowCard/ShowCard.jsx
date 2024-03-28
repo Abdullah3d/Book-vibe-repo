@@ -75,29 +75,29 @@ const ShowCard = () => {
     };
 
     return (
-        <div className="flex px-10 rounded-2xl">
+        <div className="flex px-5 md:px-10 rounded-2xl">
             <div>
                 <img className="w-[800px] h-[600px] object-cover" src={book.image} alt={book.bookName} />
             </div>
             <div>
-                <div className="p-5  text-2xl px-5 font-semibold">
+                <div className="p-5 text-lg md:text-2xl font-semibold">
                     <h2>{book.bookName}</h2>
                     <p>{book.author}</p>
                     <hr />
                     <p>{book.category}</p>
                     <p>{book.review}</p>
                 </div>
-                <div className="flex gap-24 text-2xl font-bold  px-5">
+                <div className="flex flex-wrap justify-between text-lg md:text-2xl font-bold px-5">
                     <p>{book.tags}</p>
                     <p className="text-green-500">#Young Adult</p>
                     <p className="text-green-500">#Identity</p>
                 </div>
                 <hr />
-                <div className="text-xl px-7 py-5">
-                    <p>{book.totalPages}</p>
-                    <p>{book.publisher}</p>
-                    <p>{book.yearOfPublishing}</p>
-                    <p>{book.rating}</p>
+                <div className="text-xl px-7 py-5 font-bold">
+                    <p>Total page:   {book.totalPages}</p>
+                    <p>Publisher:    {book.publisher}</p>
+                    <p>Year Of Publishing:  {book.yearOfPublishing}</p>
+                    <p>Rating:{book.rating}</p>
                 </div>
                 <div className="px-7">
                     <button onClick={() => addItem(book)} className="btn bg-white text-xl">Read</button>
